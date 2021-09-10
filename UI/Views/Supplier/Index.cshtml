@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<SupplierVM> 
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.SupplierID</td>
+        <td>@item.CompanyName</td>
+        <td>@item.ContactName</td>
+    </tr>
+}
