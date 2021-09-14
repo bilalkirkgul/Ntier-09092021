@@ -17,8 +17,18 @@ namespace BLL.Concrete
             supplierDAL = supplier;
         }
 
+        void CheckControl(Supplier supplier)
+        {
+            if (string.IsNullOrEmpty(supplier.CompanyName)||string.IsNullOrEmpty(supplier.ContactName))
+            {
+                throw new Exception("**** boş geçilemez");
+            }
+        }
+
+
         public void Add(Supplier entity)
         {
+            CheckControl(entity);
             supplierDAL.Insert(entity);
         }
 
@@ -44,6 +54,7 @@ namespace BLL.Concrete
 
         public void Update(Supplier entity)
         {
+            CheckControl(entity);
             supplierDAL.Update(entity);
         }
     }

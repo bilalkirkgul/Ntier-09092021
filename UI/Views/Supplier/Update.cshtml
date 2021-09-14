@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+}
+
+@model SupplierVM
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+        <div class="form-group">
+            @Html.TextBoxFor(a => a.SupplierID, new { @class = "form-control", type="hidden"})
+            @Html.TextBoxFor(a => a.CompanyName, new { @class = "form-control" })
+        </div>
+            <div class="form-group">
+                @Html.TextBoxFor(a => a.ContactName, new { @class = "form-control"})
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Güncelle</button>
+            </div>
+
+        }
+    </div>
+</div>
+<div class="panel-footer">
+    @if (ViewBag.Message != null)
+    {
+        <span class="alert-info">@ViewBag.Message</span>
+    }
+</div>
+
+
