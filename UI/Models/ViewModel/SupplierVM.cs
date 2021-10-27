@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace UI.ViewModels
+namespace UI.Models.ViewModel
 {
     public class SupplierVM
     {

@@ -132,13 +132,16 @@
     <Compile Include="App_Start\NinjectControllerFactory.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Ninject\BLLModule.cs" />
+    <Compile Include="Models\ViewModel\ProductPropVM.cs" />
+    <Compile Include="Models\ViewModel\ProductVM.cs" />
+    <Compile Include="Models\ViewModel\SupplierVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\SupplierVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -173,14 +176,18 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Supplier\Index.cshtml" />
     <Content Include="Views\Supplier\Add.cshtml" />
     <Content Include="Views\Supplier\Update.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Add.cshtml" />
+    <Content Include="Views\Home\Update.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\Product\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

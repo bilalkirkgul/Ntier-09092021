@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+@model ProductPropVM
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                @Html.TextBoxFor(a => a.ProductName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(a => a.UnitInStock, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(a => a.UnitPrice, new { @class = "form-control" })
+            </div>
+            @*<div class="form-group">
+                //productPropVM.CategoryID olarak algılıyor o yüzden controllerdan veriyi çekerken ona göre çekmemiz gerekiyor
+                @Html.DropDownListFor(a => a.CategoryID, new SelectList(Model.Categories, "CategoryID", "CategoryName"), new { @class = "form-control" })
+            </div>*@
+
+            //productPropWM.Product.CategoryId olarak algılıyor o yüzden controllerdan veriyi çekerken ona göre çekmemiz gerekiyor
+            <div class="form-group">
+                @Html.DropDownListFor(a => a.Product.CategoryID, new SelectList(Model.Categories, "CategoryID", "CategoryName"), new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.DropDownListFor(a => a.SupplierID, new SelectList(Model.Suppliers, "SupplierID", "CompanyName"), new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" type="submit">Add</button>
+            </div>
+        }
+    </div>
+</div>
+<div class="panel-footer">
+    @if (ViewBag.Message != null)
+    {
+        <span class="alert alert-info">@ViewBag.Message</span>
+    }
+</div>
+
+
+

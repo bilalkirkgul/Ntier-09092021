@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+}
+@model ProductVM
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        @using (Html.BeginForm("Update", "Home", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.HiddenFor(a => a.Product.ProductID)
+                @Html.TextBoxFor(a => a.Product.ProductName, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(a => a.Product.UnitInStock, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(a => a.Product.UnitPrice, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.HiddenFor(a=>a.Product.CategoryID)
+                @Html.DropDownListFor(a => a.Product.CategoryID, new SelectList(Model.Categories, "CategoryID", "CategoryName"))
+            </div>
+            <div class="form-group">
+                @*//@Html.HiddenFor(a => a.Product.SupplierID)*@
+                @Html.DropDownListFor(a => a.Product.SupplierID, new SelectList(Model.Suppliers, "SupplierID", "CompanyName"))
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-block" type="submit">Update</button>
+            </div>
+        }
+    </div>
+</div>
+<div class="panel-footer">
+    @if (ViewBag.Message!=null)
+    {
+        <span class="alert alert-info" >@ViewBag.Message</span>
+    }
+</div>
+

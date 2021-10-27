@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using UI.ViewModels;
+using UI.Models.ViewModel;
 
 namespace UI.Controllers
 {
@@ -81,6 +81,7 @@ namespace UI.Controllers
                 if (ModelState.IsValid)
                 {
                     supplierBLL.Add(ConvertModel(supplierVM));
+                    return RedirectToAction("Index");
                 }
                 else
                 {
